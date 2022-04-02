@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   root "products#index"
 
+  resources :carts, only: [:index, :update, :destroy]
+
 end

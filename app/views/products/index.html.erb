@@ -3,11 +3,58 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="<%= image_url('favicon.ico') %>">
+    <link rel="icon" type="image/x-icon" href="<%= image_url "favicon.ico" %>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap" rel="stylesheet">
     <title>Golden Sneaker</title>
     <%= stylesheet_link_tag "styles.css" %>
 </head>
 <body>
-    <h1>hello</h1>
+    <div id="main">
+        <div class="card">
+            <div class="card-brand">
+                <%= image_tag "nike.png", class: "card-brand-logo" %>
+            </div>
+            <div class="card-title">
+                Our Products
+            </div>
+            <div class="card-body">
+                <div class="items">
+                    <% @products.each do |shoes| %>
+                        <div class="item">
+                            <div class="item-image" style="background-color: <%= shoes.color %>;">
+                                <%= image_tag shoes.image %>
+                            </div>
+                            <div class="item-name"><%= shoes.name %></div>
+                            <div class="item-description"><%= shoes.description %></div>
+                            <div class="item-bottom">
+                                <div class="item-price">$<%= number_with_precision(shoes.price, :precision => 2) %></div>
+                                <div class="item-add-btn">ADD TO CART</div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-brand">
+                <%= image_tag "nike.png", class: "card-brand-logo" %>
+            </div>
+            <div class="card-title">
+                Your cart
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <div class="card-body">
+                <div id="cart-empty" style="display:hidden;">
+                    <p class="cart-empty-text">
+                        Your cart is empty.
+                    </p>
+                </div>
+                <div id="cart-items"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
