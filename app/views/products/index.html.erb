@@ -30,7 +30,13 @@
                             <div class="item-description"><%= shoes.description %></div>
                             <div class="item-bottom">
                                 <div class="item-price">$<%= number_with_precision(shoes.price, :precision => 2) %></div>
-                                <div class="item-add-btn">ADD TO CART</div>
+                                <% if shoes != @products.first %>
+                                    <div class="item-add-btn">ADD TO CART</div>
+                                <% else %>
+                                    <div class="item-add-btn checked">
+                                        <%= image_tag "check.png" %>
+                                    </div>
+                                <% end %>
                             </div>
                         </div>
                     <% end %>
@@ -53,6 +59,27 @@
                     </p>
                 </div>
                 <div id="cart-items">
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <div class="item-image-holder" style="background-color: <%= @products.first.color %>">
+                                <%= image_tag @products.first.image %>
+                            </div>
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name"><%= @products.first.name %></div>
+                            <div class="cart-item-price">$<%= @products.first.price %></div>
+                            <div class="cart-item-bottom">
+                                <div class="cart-item-quantity">
+                                    <div class="cart-item-des-quantity">-</div>
+                                    <div class="cart-item-number-quantity">1</div>
+                                    <div class="cart-item-inc-quantity">+</div>
+                                </div>
+                                <div class="cart-item-remove">
+                                    <%= image_tag "trash.png" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
