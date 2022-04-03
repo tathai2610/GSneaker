@@ -1,24 +1,18 @@
-# README
+# Golden Sneaker
+This is the assignment test for web developer intern at Golden Owl. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Progress
+- Only products that have been saved to database are shown.
+- Only HTML, CSS have been implemented (haven't done any functions).
 
-Things you may want to cover:
+**Note: I did refer a lot to the original CSS file as there are many things that I havenn't experienced.**
 
-* Ruby version
+## Difficulties
+- Still have to search a lot for instructions.
+- I don't know how to run the app on others' local with the database in mine, also I havent found a way to upload the database.
+- Heroku deployment encountered an error (uninitialized constant Gem::Source (NameError)).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Images of the current work
+![image-item-in-cart](https://github.com/tathai2610/GSneaker/blob/main/screenshots/item-in-cart.jpeg)
+![image-no-item-in-cart](https://github.com/tathai2610/GSneaker/blob/main/screenshots/no-item-in-cart.jpeg)
+![image-item-not-in-cart](https://github.com/tathai2610/GSneaker/blob/main/screenshots/item-not-in-cart.jpeg)
